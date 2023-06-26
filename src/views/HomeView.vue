@@ -1,8 +1,8 @@
 <template>
-  <!-- <div class="home">
+  <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div> -->
+  </div>
 
   <!-- <div>
     <p v-if="hours<12">Good morning!</p>
@@ -16,20 +16,21 @@
   </div> -->
 
   <p><span :title="message">Hover & See the Dynamic Title</span></p>
-  <p :class="{ red: isRed }" @click="toggleRed">
+  <p :class="{ red: isRed }" @click="toggleRed()">
     This should be red... But click me to toggle
   </p>
-  <p :style="{ color }" @click="toggleColor">This will change color when clicking</p>
+  <p :style="{ color }" @click="toggleColor()">
+    This will change color when clicking
+  </p>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-
-  data() {
-    return { message: "Hello There", isRed: true, color: green };
+ data() {
+    return { message: "Hello There", isRed: true, color: 'green' };
   },
 
   methods: {
@@ -41,20 +42,12 @@ export default {
     }
   }
 
-  // name: 'HomeView',
-  // data: {},
-  // components: {
-  //   HelloWorld
-  // }
-  // data: { path: location.pathname },
 };
-// data: {
-//   hours: new Date().getHours();
-// }
+
 </script>
 
 <style>
-  red {
+.red {
     color: red;
   }
 </style>

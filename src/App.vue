@@ -1,34 +1,26 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
-  
-
-  <p><span :title="message">Hover & See the Dynamic Title</span></p>
-  <p :class="{ red: isRed }" @click="toggleRed()">
-    This should be red... But click me to toggle
-  </p>
-  <p :style="{ color }" @click="toggleColor()">
-    This will change color when clicking
-  </p>
+<NavBarComp/>
+<router-view/>
 </template>
 
 <script>
-export default {
-   data() {
-    return { message: "Hello There", isRed: true, color: 'green' };
-  },
+import NavBarComp from './components/NavBar-comp.vue'
 
-  methods: {
-    toggleRed() {
-      this.isRed = !this.isRed
-    },
-    toggleColor () {
-      this.color= this.color === 'green' ? 'blue' : 'green'
-    }
-  }
+export default {
+
+components: {NavBarComp}
+  //  data() {
+  //   return { message: "Hello There", isRed: true, color: 'green' };
+  // },
+
+  // methods: {
+  //   toggleRed() {
+  //     this.isRed = !this.isRed
+  //   },
+  //   toggleColor () {
+  //     this.color= this.color === 'green' ? 'blue' : 'green'
+  //   }
+  // }
 
 }
 </script>
